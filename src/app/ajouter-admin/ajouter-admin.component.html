@@ -74,6 +74,8 @@
                                             <div class="col-md-10">
                                                 <input formControlName="nom" class="form-control" type="text"
                                                     placeholder="Nom" id="example-text-input">
+                                                    <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">non valide (3 lettres minimum, lettres uniquement)
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -82,6 +84,8 @@
                                             <div class="col-md-10">
                                                 <input formControlName="prenom" class="form-control" type="text"
                                                     placeholder="Prénom" id="example-search-input">
+                                                     <div *ngIf="prenom?.invalid && prenom?.touched" class="text-danger">non valide (3 lettres minimum, lettres uniquement)
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -89,7 +93,9 @@
                                                 class="col-md-2 col-form-label">Email</label>
                                             <div class="col-md-10">
                                                 <input formControlName="email" class="form-control" type="email"
-                                                    placeholder="Enter_Email@gmail.com" id="example-email-input">
+                                                    placeholder="Enter_Email@gmail.com" id="example-email-input">  
+                                                    <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email non valide (utilisez le format : exemple@gmail.com)
+                                                    </div>     
                                             </div>
                                         </div>
 
@@ -99,6 +105,8 @@
                                             <div class="col-md-10">
                                                 <input formControlName="mdp" class="form-control" type="password"
                                                     placeholder="Tapez le mot de passe" id="example-password-input">
+                                                    <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de passe non valide (minimum 3 chiffres)
+                                                    </div>
                                             </div>
                                         </div>
 

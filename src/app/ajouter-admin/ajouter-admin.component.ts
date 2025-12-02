@@ -71,7 +71,7 @@ export class AjouterAdminComponent {
         case 'prenom':
           return 'Seuls les caractères alphabétiques sont autorisés';
         case 'email':
-          return 'L\'email doit se terminer par @gmail.com';
+          return 'L\'email Ydoit se terminer par @gmail.com';
         case 'mdp':
           return 'Le mot de passe doit contenir uniquement des caractères alphanumériques';
         default:
