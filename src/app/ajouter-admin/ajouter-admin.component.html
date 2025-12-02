@@ -59,75 +59,68 @@
                     <!-- end page title -->
 
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
+                        <form (ngSubmit)="addNewAdmin()" [formGroup]="adminForm">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
 
-                                    <!--<h4 class="card-title">Textual inputs</h4>
+                                        <!--<h4 class="card-title">Textual inputs</h4>
                                         <p class="card-title-desc">Here are examples of <code>.form-control</code> applied to
                                             each
                                             textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p> -->
 
-                                    <div class="mb-3 row">
-                                        <label for="example-text-input" class="col-md-2 col-form-label">Nom</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" placeholder="Nom"
-                                                id="example-text-input">
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Nom</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="nom" class="form-control" type="text"
+                                                    placeholder="Nom" id="example-text-input">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="example-search-input" class="col-md-2 col-form-label">Prénom</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="text" placeholder="Prénom"
-                                                id="example-search-input">
+                                        <div class="mb-3 row">
+                                            <label for="example-search-input"
+                                                class="col-md-2 col-form-label">Prénom</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="prenom" class="form-control" type="text"
+                                                    placeholder="Prénom" id="example-search-input">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="email" placeholder="Enter_Email@gmail.com"
-                                                id="example-email-input">
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input"
+                                                class="col-md-2 col-form-label">Email</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="email" class="form-control" type="email"
+                                                    placeholder="Enter_Email@gmail.com" id="example-email-input">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="mb-3 row">
-                                        <label for="example-password-input"
-                                            class="col-md-2 col-form-label">Password</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="password"
-                                                placeholder="Tapez le mot de passe" id="example-password-input">
+                                        <div class="mb-3 row">
+                                            <label for="example-password-input"
+                                                class="col-md-2 col-form-label">Password</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="mdp" class="form-control" type="password"
+                                                    placeholder="Tapez le mot de passe" id="example-password-input">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="mb-3 row">
-                                        <label class="col-md-2 col-form-label">Role</label>
-                                        <div class="col-md-10">
-                                            <select class="form-select">
+                                        <div class="mb-3 row">
+                                            <label class="col-md-2 col-form-label">Role</label>
+                                            <div class="col-md-10">
+                                                <select formControlName="role" class="form-select">
 
-                                                <option>Admin</option>
-                                                <option>Super Admin</option>
-                                            </select>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="superAdmin">Super Admin</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <label for="exampleDataList" class="col-md-2 col-form-label">Datalists</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" list="datalistOptions" id="exampleDataList"
-                                                placeholder="Type to search...">
-                                            <datalist id="datalistOptions">
-                                                <option value="San Francisco">
-                                                <option value="New York">
-                                                <option value="Seattle">
-                                                <option value="Los Angeles">
-                                                <option value="Chicago">
-                                            </datalist>
+                                        <div>
+                                            <button type="submit" class="btn btn-primary w-md">Ajouter</button>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <!-- end col -->
+                            </div> <!-- end col -->
+                        </form>
                     </div>
                     <!-- end row -->
 
