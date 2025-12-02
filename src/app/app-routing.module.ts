@@ -5,7 +5,7 @@ import { ListeAdminComponent } from './liste-admin/liste-admin.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path:'',component:AjouterAdminComponent},
+  {path:'add',component:AjouterAdminComponent},
   {path:'listeAdmin',component:ListeAdminComponent},
   {path:'login',component:LoginComponent}
 ];
