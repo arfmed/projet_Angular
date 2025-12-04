@@ -11,6 +11,10 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AjouterEntrepriseComponent } from './ajouter-entreprise/ajouter-entreprise.component';
+import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
+import { AjouterEmployeComponent } from './ajouter-employe/ajouter-employe.component';
+import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     MenuComponent,
     FooterComponent,
+    AjouterEntrepriseComponent,
+    ListeEntrepriseComponent,
+    AjouterEmployeComponent,
+    ListeEmployeComponent,
   ],
   imports: [
     BrowserModule,

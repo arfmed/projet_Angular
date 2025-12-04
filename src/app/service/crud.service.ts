@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Admin } from '../Entity/Admin.Entity';
 import { Observable } from 'rxjs';
+import { Employe } from '../Entity/Employe.Entity';
 
 
 @Injectable({
@@ -20,6 +21,19 @@ export class CrudService {
   }
   onDeleteAdmin(id:number){
     return this.http.delete(`${this.apiUrl+"/admin/"}${id}`)
+  }
+
+  addentreprise(admin:Admin) {
+    return this.http.post<any>(this.apiUrl +"/entreprise",admin)
+
+  }
+  getEntreprise(): Observable<Admin[]>{
+    return this.http.get<Admin[]>(this.apiUrl +"/entreprise");
+  }
+ 
+  addemploye(employe:Employe) {
+    return this.http.post<any>(this.apiUrl +"/Employe",employe)
+
   }
 
 }
