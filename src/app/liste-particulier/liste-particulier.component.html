@@ -1,1 +1,248 @@
-<p>liste-particulier works!</p>
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/skote/layouts/tables-datatable.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:13 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Data Tables | Skote - Particulier & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Particulier & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <app-header></app-header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <app-menu></app-menu>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18 text-cap">Liste Particulier</h4>
+
+                                <!--<div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                    <li class="breadcrumb-item active">Data Tables</li>
+                </ol>
+            </div>-->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .text-cap {
+                            text-transform: capitalize;
+                        }
+                    </style>
+
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <!--<h4 class="card-title">Default Datatable</h4>
+                                        <p class="card-title-desc">DataTables has most features enabled by
+                                            default, so all you need to do to use it with your own tables is to call
+                                            the construction function: <code>$().DataTable();</code>.
+                                        </p>-->
+
+                                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Nom</th>
+
+                                                <th>photoDeprofil</th>
+                                                <th>logoEntreprise</th>
+                                                <th>photoCouverture</th>
+                                                <th>titreEmploi</th>
+                                                <th>departement</th>
+                                                <th>nomEntreprise</th>
+                                                <th>numTelephone</th>
+                                                <th>urlEntreprise</th>
+                                                <th>adresse </th>
+                                                <th>couleur</th>
+                                                <th>police</th>
+                                                <th>fbLink</th>
+                                                <th>xLink</th>
+                                                <th>instagramLink</th>
+                                                <th>linkedinLink</th>
+                                                <th>youtubeLink</th>
+                                                <th>snapchatLink</th>
+                                                <th>tiktokLink</th>
+                                                <th>twitchLink</th>
+                                                <th>yelpLink</th>
+                                                <th>whatsappLink</th>
+                                                <th>signalLink</th>
+                                                <th>discordLink</th>
+                                                <th>skypeLink</th>
+                                                <th>telegramLink</th>
+                                                <th>githubLink</th>
+                                                <th>gitlabLink</th>
+                                                
+                                                <th>email</th>
+                                                <th> mdp</th>
+
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let particulier of listeParticulier">
+                                                <td> {{particulier.id}}</td>
+                                                <td>{{particulier.nom}}</td>
+                                                <td> {{particulier.photoDeProfil}} </td>
+                                                <td> {{ particulier.logoEntreprise }} </td>
+                                                <td> {{ particulier.photoCouverture }} </td>
+                                                <td> {{ particulier.titreEmploi }} </td>
+                                                <td> {{ particulier.departement }} </td>
+                                                <td> {{ particulier.nomEntreprise }} </td>
+                                                <td> {{ particulier.numTelephone }} </td>
+                                                <td> {{ particulier.urlEntreprise }} </td>
+                                                <td> {{ particulier.adresse }} </td>
+                                                <td> {{ particulier.couleur }} </td>
+                                                <td> {{ particulier.police }} </td>
+                                                <td> {{ particulier.fbLink }} </td>
+                                                <td> {{ particulier.xLink }} </td>
+                                                <td> {{ particulier.instagramLink }} </td>
+                                                <td> {{ particulier.linkedinLink }} </td>
+                                                <td> {{ particulier.youtubeLink }} </td>
+                                                <td> {{ particulier.snapchatLink }} </td>
+                                                <td> {{ particulier.tiktokLink }} </td>
+                                                <td> {{ particulier.twitchLink }} </td>
+                                                <td> {{ particulier.yelpLink }} </td>
+                                                <td> {{ particulier.whatsappLink }} </td>
+                                                <td> {{ particulier.signalLink }} </td>
+                                                <td> {{ particulier.discordLink }} </td>
+                                                <td> {{ particulier.skypeLink }} </td>
+                                                <td> {{ particulier.telegramLink }} </td>
+                                                <td> {{ particulier.githubLink }} </td>
+                                                <td> {{ particulier.gitlabLink }} </td>
+
+
+                                                <td>{{particulier.email}}</td>
+                                                <td>{{ particulier.mdp }}</td>
+                                                 <td><button type="submit" class="btn btn-success">modifier</button>
+                                                    <button type="submit" class="btn btn-danger"(click)="DeletePariculier(particulier)">supprimer</button>
+                                                </td>
+
+                                               
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+
+
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+
+            <app-footer></app-footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                <h5 class="m-0 me-2">Settings</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0" />
+            <h6 class="text-center mb-0">Choose Layouts</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
+                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-5">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
+                    <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                </div>
+
+
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+
+
+</body>
+
+<!-- Mirrored from themesbrand.com/skote/layouts/tables-datatable.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:18 GMT -->
+
+</html>

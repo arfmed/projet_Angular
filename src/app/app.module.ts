@@ -17,6 +17,7 @@ import { AjouterEmployeComponent } from './ajouter-employe/ajouter-employe.compo
 import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 import { AjouterParticulierComponent } from './ajouter-particulier/ajouter-particulier.component';
 import { ListeParticulierComponent } from './liste-particulier/liste-particulier.component';
+import { ModifierAdminComponent } from './modifier-admin/modifier-admin.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ListeParticulierComponent } from './liste-particulier/liste-particulier
     ListeEmployeComponent,
     AjouterParticulierComponent,
     ListeParticulierComponent,
+    ModifierAdminComponent,
   ],
   imports: [
     BrowserModule,

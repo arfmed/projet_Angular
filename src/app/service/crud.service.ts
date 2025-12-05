@@ -23,6 +23,14 @@ export class CrudService {
   onDeleteAdmin(id:number){
     return this.http.delete(`${this.apiUrl+"/admin/"}${id}`)
   }
+  findAdminById(id : number): Observable<Admin> {
+    const url = `${this.apiUrl + "/admin"}/${id}`;
+    return this.http.get<Admin>(url)
+  }
+updateAdmin(id:number,admin: Admin) {
+    const url = `${this.apiUrl+"/admin"}/${id}`
+    return this.http.put<any>(url,admin);
+  }
 
   addentreprise(admin:Admin) {
     return this.http.post<any>(this.apiUrl +"/entreprise",admin)
@@ -39,6 +47,10 @@ export class CrudService {
   addparticuler(particulier:Particulier) {
     return this.http.post<any>(this.apiUrl +"/particulier",particulier)
 
+  }
+
+  getParticulier(): Observable<Particulier[]>{
+    return this.http.get<Particulier[]>(this.apiUrl +"/particulier");
   }
    
 

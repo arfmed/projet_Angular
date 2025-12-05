@@ -8,6 +8,8 @@ import { AjouterEntrepriseComponent } from './ajouter-entreprise/ajouter-entrepr
 import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 import { AjouterEmployeComponent } from './ajouter-employe/ajouter-employe.component';
 import { AjouterParticulierComponent } from './ajouter-particulier/ajouter-particulier.component';
+import { ModifierAdminComponent } from './modifier-admin/modifier-admin.component';
+import { ListeParticulierComponent } from './liste-particulier/liste-particulier.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,11 @@ const routes: Routes = [
   {path:'addEmploye',component:AjouterEmployeComponent},
   {path:'listeEmlpoye',component:ListeEmployeComponent},
   {path: 'addParticulier',component:AjouterParticulierComponent},
+  {path: 'modifierAdmin/:id',component:ModifierAdminComponent},
+  {path:'listeParticulier',component:ListeParticulierComponent},
+  
+  
+  
   
 ];
 
