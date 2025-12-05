@@ -1,0 +1,501 @@
+<p>ajouter-particulier works!</p>
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesbrand.com/skote/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:05 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Form Elements | Skote - Particulier & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Particulier& Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <app-header></app-header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <app-menu></app-menu>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18 text-capitalize">Ajouter Particulier </h4>
+
+                                <!--<div class="page-title-right">
+                <ol class="breadcrumb m-0 text-capitalize">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                    <li class="breadcrumb-item active">Form Elements</li>
+                </ol>
+            </div> -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <form (ngSubmit)="addNewParticulier()" [formGroup]="particulierForm">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <!--<h4 class="card-title">Textual inputs</h4>
+                                        <p class="card-title-desc">Here are examples of <code>.form-control</code> applied to
+                                            each
+                                            textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p> -->
+
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">photoDeProfil</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="photoDeProfil" class="form-control" type="text"
+                                                    placeholder="photoDeProfil" id="example-photoDeProfil-input">
+                                                <div *ngIf="photoDeProfil?.invalid && photoDeProfil?.touched"
+                                                    class="text-danger">non valide (3 lettres minimum, lettres
+                                                    uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">logoEntreprise</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="logoEntreprise" class="form-control" type="text"
+                                                    placeholder="logoEntreprise" id="example-logoEntreprise-input">
+                                                <div *ngIf="logoEntreprise?.invalid && logoEntreprise?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">photoCouverture</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="photoCouverture" class="form-control" type="text"
+                                                    placeholder="photoCouverture" id="example-photoCouverture-input">
+                                                <div *ngIf="photoCouverture?.invalid && photoCouverture?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">titreEmploi</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="titreEmploi" class="form-control" type="text"
+                                                    placeholder="titreEmploi" id="example-titreEmploi-input">
+                                                <div *ngIf="titreEmploi?.invalid && titreEmploi?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">departement</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="departement" class="form-control" type="text"
+                                                    placeholder="departement" id="example-departement-input">
+                                                <div *ngIf="departement?.invalid && departement?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">nomEntreprise</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="nomEntreprise" class="form-control" type="text"
+                                                    placeholder="nomEntreprise" id="example-nomEntreprise-input">
+                                                <div *ngIf="nomEntreprise?.invalid && nomEntreprise?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">numTelephone</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="numTelephone" class="form-control" type="text"
+                                                    placeholder="numTelephone" id="example-numTelephone-input">
+                                                <div *ngIf="numTelephone?.invalid && numTelephone?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">urlEntreprise</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="urlEntreprise" class="form-control" type="text"
+                                                    placeholder="urlEntreprise" id="example-urlEntreprise-input">
+                                                <div *ngIf="urlEntreprise?.invalid && urlEntreprise?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">adresse</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="adresse" class="form-control" type="text"
+                                                    placeholder="adresse" id="example-adresse-input">
+                                                <div *ngIf="adresse?.invalid && adresse?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">couleur</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="couleur" class="form-control" type="text"
+                                                    placeholder="couleur" id="example-couleur-input">
+                                                <div *ngIf="couleur?.invalid && couleur?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">police</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="police" class="form-control" type="text"
+                                                    placeholder="police" id="example-police-input">
+                                                <div *ngIf="police?.invalid && police?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">fbLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="fbLink" class="form-control" type="text"
+                                                    placeholder="fbLink" id="example-fbLink-input">
+                                                <div *ngIf="fbLink?.invalid && fbLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">xLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="xLink" class="form-control" type="text"
+                                                    placeholder="xLink" id="example-xLink-input">
+                                                <div *ngIf="xLink?.invalid && xLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">instagramLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="instagramLink" class="form-control" type="text"
+                                                    placeholder="instagramLink" id="example-instagramLink-input">
+                                                <div *ngIf="instagramLink?.invalid && instagramLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">linkedinLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="linkedinLink" class="form-control" type="text"
+                                                    placeholder="linkedinLink" id="example-linkedinLink-input">
+                                                <div *ngIf="linkedinLink?.invalid && linkedinLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">youtubeLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="youtubeLink" class="form-control" type="text"
+                                                    placeholder="youtubeLink" id="example-youtubeLink-input">
+                                                <div *ngIf="youtubeLink?.invalid && youtubeLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">snapchatLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="snapchatLink" class="form-control" type="text"
+                                                    placeholder="snapchatLink" id="example-snapchatLink-input">
+                                                <div *ngIf="snapchatLink?.invalid && snapchatLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">tiktokLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="tiktokLink" class="form-control" type="text"
+                                                    placeholder="tiktokLink" id="example-tiktokLink-input">
+                                                <div *ngIf="tiktokLink?.invalid && tiktokLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">twitchLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="twitchLink" class="form-control" type="text"
+                                                    placeholder="twitchLink" id="example-twitchLink-input">
+                                                <div *ngIf="twitchLink?.invalid && twitchLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">yelpLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="yelpLink" class="form-control" type="text"
+                                                    placeholder="yelpLink" id="example-yelpLink-input">
+                                                <div *ngIf="yelpLink?.invalid && yelpLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">whatsappLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="whatsappLink" class="form-control" type="text"
+                                                    placeholder="whatsappLink" id="example-whatsappLink-input">
+                                                <div *ngIf="whatsappLink?.invalid && whatsappLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">signalLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="signalLink" class="form-control" type="text"
+                                                    placeholder="signalLink" id="example-signalLink-input">
+                                                <div *ngIf="signalLink?.invalid && signalLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">discordLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="discordLink" class="form-control" type="text"
+                                                    placeholder="discordLink" id="example-discordLink-input">
+                                                <div *ngIf="discordLink?.invalid && discordLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">skypeLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="skypeLink" class="form-control" type="text"
+                                                    placeholder="skypeLink" id="example-skypeLink-input">
+                                                <div *ngIf="skypeLink?.invalid && skypeLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">telegramLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="telegramLink" class="form-control" type="text"
+                                                    placeholder="telegramLink" id="example-telegramLink-input">
+                                                <div *ngIf="telegramLink?.invalid && telegramLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">githubLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="githubLink" class="form-control" type="text"
+                                                    placeholder="githubLink" id="example-githubLink-input">
+                                                <div *ngIf="githubLink?.invalid && githubLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input"
+                                                class="col-md-2 col-form-label">gitlabLink</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="gitlabLink" class="form-control" type="text"
+                                                    placeholder="gitlabLink" id="example-gitlabLink-input">
+                                                <div *ngIf="gitlabLink?.invalid && gitlabLink?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Nom</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="nom" class="form-control" type="text"
+                                                    placeholder="Nom" id="example-text-input">
+                                                <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input"
+                                                class="col-md-2 col-form-label">Email</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="email" class="form-control" type="email"
+                                                    placeholder="Enter_Email@gmail.com" id="example-email-input">
+                                                <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email
+                                                    non valide (utilisez le format : exemple@gmail.com)
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="example-password-input"
+                                                class="col-md-2 col-form-label">Password</label>
+                                            <div class="col-md-10">
+                                                <input formControlName="mdp" class="form-control" type="password"
+                                                    placeholder="Tapez le mot de passe" id="example-password-input">
+                                                <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de
+                                                    passe non valide (minimum 3 chiffres)
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <button type="submit" class="btn btn-primary w-md">Ajouter</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </form>
+                    </div>
+                    <!-- end row -->
+
+
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+
+            <app-footer></app-footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                <h5 class="m-0 me-2">Settings</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0" />
+            <h6 class="text-center mb-0">Choose Layouts</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
+                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-5">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
+                    <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                </div>
+
+
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+
+
+</body>
+
+
+<!-- Mirrored from themesbrand.com/skote/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:06 GMT -->
+
+</html>

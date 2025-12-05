@@ -7,6 +7,8 @@ import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.co
 import { AjouterEntrepriseComponent } from './ajouter-entreprise/ajouter-entreprise.component';
 import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 import { AjouterEmployeComponent } from './ajouter-employe/ajouter-employe.component';
+import { AjouterParticulierComponent } from './ajouter-particulier/ajouter-particulier.component';
+
 
 const routes: Routes = [
   {path:'add',component:AjouterAdminComponent},
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path:'addEntreprise',component:AjouterEntrepriseComponent},
   {path:'addEmploye',component:AjouterEmployeComponent},
   {path:'listeEmlpoye',component:ListeEmployeComponent},
+  {path: 'addParticulier',component:AjouterParticulierComponent},
   
 ];
 

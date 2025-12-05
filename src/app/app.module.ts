@@ -15,6 +15,8 @@ import { AjouterEntrepriseComponent } from './ajouter-entreprise/ajouter-entrepr
 import { ListeEntrepriseComponent } from './liste-entreprise/liste-entreprise.component';
 import { AjouterEmployeComponent } from './ajouter-employe/ajouter-employe.component';
 import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
+import { AjouterParticulierComponent } from './ajouter-particulier/ajouter-particulier.component';
+import { ListeParticulierComponent } from './liste-particulier/liste-particulier.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
     ListeEntrepriseComponent,
     AjouterEmployeComponent,
     ListeEmployeComponent,
+    AjouterParticulierComponent,
+    ListeParticulierComponent,
   ],
   imports: [
     BrowserModule,

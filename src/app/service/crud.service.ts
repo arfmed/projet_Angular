@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Admin } from '../Entity/Admin.Entity';
 import { Observable } from 'rxjs';
 import { Employe } from '../Entity/Employe.Entity';
+import { Particulier } from '../Entity/Particulier.Entity';
 
 
 @Injectable({
@@ -32,8 +33,23 @@ export class CrudService {
   }
  
   addemploye(employe:Employe) {
-    return this.http.post<any>(this.apiUrl +"/Employe",employe)
+    return this.http.post<any>(this.apiUrl +"/employe",employe)
+  } 
+
+  addparticuler(particulier:Particulier) {
+    return this.http.post<any>(this.apiUrl +"/particulier",particulier)
+
+  }
+   
+
+
+    
+    
+
+
 
   }
 
-}
+  
+
+
