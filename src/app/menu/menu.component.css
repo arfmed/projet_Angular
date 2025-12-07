@@ -1,99 +1,113 @@
-/* --- Menu "Compact Blue Dynamic" --- */
+/* --- Menu "Deep Navy Premium" (Contrast & Elegance) --- */
 
-#sidebar-menu {
-    padding: 15px 10px;
-    /* Moins de padding global */
-    font-family: 'Rubik', sans-serif;
+/* Reset du fond pour un Bleu Nuit Profond et Élégant */
+.vertical-menu {
+    background: #111827 !important;
+    /* Bleu très très sombre (presque noir) */
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
 }
 
+#sidebar-menu {
+    padding: 25px 12px;
+    font-family: 'Inter', sans-serif;
+    /* Police très clean */
+}
+
+/* Titre de section discret */
 .menu-title {
-    padding: 0 12px 10px 12px !important;
-    font-size: 0.7rem;
+    padding: 0 16px 15px 16px !important;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #94a3b8;
-    letter-spacing: 0.05em;
+    color: #6b7280;
+    /* Gris moyen */
+    letter-spacing: 1.2px;
 }
 
 #sidebar-menu ul li {
-    margin-bottom: 6px;
-    /* Items plus rapprochés */
+    margin-bottom: 8px;
 }
 
-/* --- Le Lien Compact --- */
+/* --- Le Lien : Sobre & Contrasté --- */
 .menu-link-neo {
     display: flex;
     align-items: center;
-    padding: 10px 16px;
-    /* Plus petit */
-    color: #64748b;
-    font-size: 0.85rem;
-    /* Texte plus discret */
+    padding: 12px 16px;
+    color: #9ca3af;
+    /* Gris clair */
+    font-size: 0.95rem;
     font-weight: 500;
     border-radius: 8px;
-    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
+    transition: all 0.3s ease;
     background: transparent;
     text-decoration: none;
+    border-left: 3px solid transparent;
+    /* Barre latérale invisible */
 }
 
-/* --- L'Icône Compacte --- */
+/* --- L'Icône : Subtilement intégrée --- */
 .icon-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    /* Icône plus petite */
-    height: 26px;
-    border-radius: 6px;
-    background: #f1f5f9;
-    /* Fond gris clair par défaut */
-    color: #94a3b8;
-    font-size: 1.1rem;
-    margin-right: 12px;
-    transition: all 0.25s ease;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    /* Pas de fond de box pour un style épuré */
+    color: #6b7280;
+    font-size: 1.35rem;
+    /* Icône assez grande */
+    margin-right: 14px;
+    transition: all 0.3s ease;
 }
 
-/* --- Interaction "Blue Splash" --- */
+/* --- Interaction : Hover --- */
 .menu-link-neo:hover {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    /* Le Bleu demandé ! */
-    color: #ffffff;
-    transform: translateX(3px);
-    /* Petit mouvement */
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-    /* Ombre bleue */
+    background: rgba(255, 255, 255, 0.05);
+    /* Éclaircissement très léger */
+    color: #f3f4f6;
+    /* Blanc cassé */
 }
 
-/* Interaction Icone */
 .menu-link-neo:hover .icon-box {
-    background: rgba(255, 255, 255, 0.2);
+    color: #38bdf8;
+    /* Bleu Cyan lumineux au survol */
+    transform: scale(1.1);
+}
+
+/* --- État Actif : High Tech & Glow --- */
+.menu-link-neo.active-link {
+    background: rgba(56, 189, 248, 0.1);
+    /* Fond Cyan trèèès transparent */
     color: #ffffff;
-    transform: scale(1.05);
-    /* Petit zoom dynamique */
+    /* Texte Blanc Pur */
+    border-left: 3px solid #38bdf8;
+    /* Barre Latérale Cyan */
 }
 
-/* --- Indicateur Latéral (Optionnel mais chic) --- */
-.menu-link-neo::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%) scaleY(0);
-    height: 14px;
-    width: 3px;
-    background: #ffffff;
-    border-radius: 0 2px 2px 0;
-    transition: 0.2s;
-    opacity: 0;
+.menu-link-neo.active-link .icon-box {
+    color: #38bdf8;
+    /* Icône Cyan Neon */
+    filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.6));
+    /* Glow Neon */
+    animation: pulse 2s infinite;
 }
 
-.menu-link-neo:hover::before {
-    transform: translateY(-50%) scaleY(1);
-    opacity: 1;
+/* --- Animation Discrète --- */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
-/* Texte un peu plus gras au survol pour la lisibilité */
-.menu-link-neo:hover span {
-    font-weight: 600;
+.menu-link-neo span {
+    letter-spacing: 0.3px;
 }
