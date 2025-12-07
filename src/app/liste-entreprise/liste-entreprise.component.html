@@ -38,7 +38,7 @@
 
                                 <div class="admin-action-bar">
                                     <button class="btn-neon-action" routerLink="/addEntreprise">
-                                        <i class="bi bi-plus-lg"></i>
+                                        <i class="bx bx-plus"></i>
                                         <span>Nouvelle Entreprise</span>
                                     </button>
                                 </div>
@@ -88,66 +88,13 @@
                                                 <td>
                                                     <a href="/modifierEntreprise/{{entreprise.id}}"
                                                         class="btn-soft-edit" title="Modifier">
-                                                        <i class="bi bi-pencil-square"></i> Modifier
+                                                        <i class="bx bx-edit-alt"></i> Modifier
                                                     </a>
                                                     <button class="btn-soft-delete"
                                                         (click)="DeleteEntreprise(entreprise)" title="Supprimer">
-                                                        <i class="bi bi-trash"></i> Supprimer
+                                                        <i class="bx bx-trash-alt"></i> Supprimer
                                                     </button>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-
-                                </div>
-                            </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-
-                </div> <!-- container-fluid -->
-            </div>
-            <!-- End Page-content -->
-
-            <app-footer></app-footer>
-        </div>
-        <!-- end main content-->
-
-    </div>
-    <!-- END layout-wrapper -->
-
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-            <div class="rightbar-title d-flex align-items-center px-3 py-4">
-                <h5 class="m-0 me-2">Settings</h5>
-                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                    <i class="mdi mdi-close noti-icon"></i>
-                </a>
-            </div>
-            <!-- Settings -->
-            <hr class="mt-0" />
-            <h6 class="text-center mb-0">Choose Layouts</h6>
-            <div class="p-4">
-                <div class="mb-2">
-                    <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
-                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-                </div>
-                <div class="mb-2">
-                    <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
-                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-                </div>
-                <!-- ... other settings ... -->
-            </div>
-        </div>
-    </div>
-    <div class="rightbar-overlay"></div>
-
-</body>
-
-</html>
