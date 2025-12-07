@@ -615,19 +615,19 @@
 
 /* --- L'Effet Dynamique "Pop & Glow" --- */
 .table tbody tr:hover {
-    transform: scale(1.02);
-    /* Agrandissement notable */
+    transform: translateY(-2px);
+    /* Lévitation légère au lieu du Scale pour éviter les bugs de scroll */
     background: #ffffff;
-    /* Ombre colorée subtile qui apparait */
-    box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.15),
+        inset 0 0 0 1px rgba(59, 130, 246, 0.3);
+    /* Bordure interne subtile */
     z-index: 10;
 }
 
 .table tbody tr:hover td {
     border-color: transparent;
-    /* On cache les bordures pour laisser l'ombre agir */
-    color: #1e293b;
-    /* Le texte fonce légèrement */
+    color: #0f172a;
+    /* Texte plus foncé et net */
 }
 
 /* Barre Latérale Magique au Hover (Gradient) */

@@ -21,7 +21,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private service: CrudService,
     private router: Router
-  ) { 
+  ) {
     let formControls = {
       email: new FormControl('', [
         Validators.required,
@@ -42,7 +42,7 @@ export class LoginComponent {
   startTimer() {
     this.isLocked = true;
     this.timeLeft = 25;
-    
+
     // Create and show the timer dialog
     const timerDialog = Swal.fire({
       title: 'Compte bloqué',
@@ -126,7 +126,7 @@ export class LoginComponent {
         let token = res.token;
         localStorage.setItem("myToken", token);
         localStorage.setItem("role", res.role);
-        
+
         Swal.fire({
           icon: 'success',
           title: 'Connecté',
@@ -134,7 +134,7 @@ export class LoginComponent {
           timer: 1500,
           showConfirmButton: false
         }).then(() => {
-          this.router.navigate(['/add']).then(() => {
+          this.router.navigate(['/listeAdmin']).then(() => {
             window.location.reload();
           });
         });
@@ -142,7 +142,7 @@ export class LoginComponent {
       error: (err) => {
         console.error('Erreur de connexion:', err);
         this.loginAttempts++;
-        
+
         if (this.loginAttempts >= 3) {
           this.startTimer();
         } else {
@@ -162,5 +162,5 @@ export class LoginComponent {
       clearInterval(this.timerInterval);
     }
 
-}
+  }
 }

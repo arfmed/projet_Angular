@@ -34,7 +34,14 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18 text-cap">Liste Employés</h4>
+                                <h4 class="mb-sm-0 font-size-18 page-title">Liste Employés</h4>
+
+                                <div class="admin-action-bar">
+                                    <button class="btn-neon-action" routerLink="/addEmploye">
+                                        <i class="bi bi-plus-lg"></i>
+                                        <span>Nouvel Employé</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -44,7 +51,6 @@
                             text-transform: capitalize;
                         }
                     </style>
-
                     <!-- end page title -->
 
                     <div class="row">
@@ -52,36 +58,90 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    <table id="datatable" class="table dt-responsive nowrap w-100">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Nom</th>
-                                                <th>Poste</th>
-                                                <th>Département</th>
-                                                <th>Entreprise</th>
-
                                                 <th>Email</th>
                                                 <th>Téléphone</th>
+                                                <th>Adresse</th>
+                                                <th>Titre</th>
+                                                <th>Département</th>
+                                                <th>Entreprise</th>
+                                                <th>URL Ent.</th>
+                                                <th>Photo Profil</th>
+                                                <th>Logo Ent.</th>
+                                                <th>Couverture</th>
+                                                <th>Couleur</th>
+                                                <th>Police</th>
+                                                <th>Facebook</th>
+                                                <th>X (Twitter)</th>
+                                                <th>Instagram</th>
+                                                <th>LinkedIn</th>
+                                                <th>YouTube</th>
+                                                <th>Snapchat</th>
+                                                <th>TikTok</th>
+                                                <th>Twitch</th>
+                                                <th>Yelp</th>
+                                                <th>WhatsApp</th>
+                                                <th>Signal</th>
+                                                <th>Discord</th>
+                                                <th>Skype</th>
+                                                <th>Telegram</th>
+                                                <th>GitHub</th>
+                                                <th>GitLab</th>
+                                                <th>Mot de passe</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             <tr *ngFor="let employe of listeEmploye">
-                                                <td>{{employe.id}}</td>
+                                                <td>#{{employe.id}}</td>
                                                 <td>{{employe.nom}}</td>
-                                                <td>{{employe.titreEmploi}}</td>
-                                                <td>{{employe.departement}}</td>
-                                                <td>{{employe.nomEntreprise}}</td>
-
                                                 <td>{{employe.email}}</td>
                                                 <td>{{employe.numTelephone}}</td>
+                                                <td>{{employe.adresse}}</td>
+                                                <td><span
+                                                        class="badge badge-soft-primary font-size-12">{{employe.titreEmploi}}</span>
+                                                </td>
+                                                <td>{{employe.departement}}</td>
+                                                <td>{{employe.nomEntreprise}}</td>
+                                                <td>{{employe.urlEntreprise}}</td>
+                                                <td class="text-truncate" style="max-width: 100px;">
+                                                    {{employe.photoDeProfil}}</td>
+                                                <td class="text-truncate" style="max-width: 100px;">
+                                                    {{employe.logoEntreprise}}</td>
+                                                <td class="text-truncate" style="max-width: 100px;">
+                                                    {{employe.photoCouverture}}</td>
+                                                <td>{{employe.couleur}}</td>
+                                                <td>{{employe.police}}</td>
+                                                <td>{{employe.fbLink}}</td>
+                                                <td>{{employe.xLink}}</td>
+                                                <td>{{employe.instagramLink}}</td>
+                                                <td>{{employe.linkedinLink}}</td>
+                                                <td>{{employe.youtubeLink}}</td>
+                                                <td>{{employe.snapchatLink}}</td>
+                                                <td>{{employe.tiktokLink}}</td>
+                                                <td>{{employe.twitchLink}}</td>
+                                                <td>{{employe.yelpLink}}</td>
+                                                <td>{{employe.whatsappLink}}</td>
+                                                <td>{{employe.signalLink}}</td>
+                                                <td>{{employe.discordLink}}</td>
+                                                <td>{{employe.skypeLink}}</td>
+                                                <td>{{employe.telegramLink}}</td>
+                                                <td>{{employe.githubLink}}</td>
+                                                <td>{{employe.gitlabLink}}</td>
+                                                <td>{{employe.mdp}}</td>
                                                 <td>
-                                                    <a href="/modifierEmploye/{{employe.id}}"
-                                                        class="btn btn-success">modifier</a>
-                                                    <button type="button" class="btn btn-danger"
-                                                        (click)="DeleteEmploye(employe)">supprimer</button>
+                                                    <a href="/modifierEmploye/{{employe.id}}" class="btn-soft-edit"
+                                                        title="Modifier">
+                                                        <i class="bi bi-pencil-square"></i> Modif.
+                                                    </a>
+                                                    <button class="btn-soft-delete" (click)="DeleteEmploye(employe)"
+                                                        title="Supprimer">
+                                                        <i class="bi bi-trash"></i> Suppr.
+                                                    </button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -107,28 +167,22 @@
     <div class="right-bar">
         <div data-simplebar class="h-100">
             <div class="rightbar-title d-flex align-items-center px-3 py-4">
-
                 <h5 class="m-0 me-2">Settings</h5>
-
                 <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
                     <i class="mdi mdi-close noti-icon"></i>
                 </a>
             </div>
-
             <!-- Settings -->
             <hr class="mt-0" />
             <h6 class="text-center mb-0">Choose Layouts</h6>
-
             <div class="p-4">
                 <div class="mb-2">
                     <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
                 </div>
-
                 <div class="form-check form-switch mb-3">
                     <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
                     <label class="form-check-label" for="light-mode-switch">Light Mode</label>
                 </div>
-
                 <div class="mb-2">
                     <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
                 </div>
@@ -136,30 +190,10 @@
                     <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
                     <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
                 </div>
-
-                <div class="mb-2">
-                    <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
-                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
-                </div>
-
-                <div class="mb-2">
-                    <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
-                </div>
-                <div class="form-check form-switch mb-5">
-                    <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
-                    <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
-                </div>
-
+                <!-- ... other settings ... -->
             </div>
-
-        </div> <!-- end slimscroll-menu-->
+        </div>
     </div>
-    <!-- /Right-bar -->
-
-    <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
 </body>

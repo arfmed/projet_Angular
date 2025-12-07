@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { CrudService } from '../service/crud.service';
 
+declare var $: any; // Déclaration pour jQuery
+
 @Component({
   selector: 'app-liste-admin',
   templateUrl: './liste-admin.component.html',
@@ -13,7 +15,7 @@ export class ListeAdminComponent {
   listeAdmin: Admin[] = [];
   role: string;
 
-  constructor(private service: CrudService, private router: Router) {}
+  constructor(private service: CrudService, private router: Router) { }
 
   ngOnInit(): void {
     this.role = localStorage.getItem("role") as string;
@@ -24,6 +26,22 @@ export class ListeAdminComponent {
     this.service.getAdmin().subscribe({
       next: (admins) => {
         this.listeAdmin = admins;
+        // Initialisation DataTables "Exactement comme" ListeEntreprise
+        setTimeout(() => {
+          if ($.fn.DataTable.isDataTable('#datatable')) {
+            $('#datatable').DataTable().destroy();
+          }
+          $('#datatable').DataTable({
+            scrollX: true,
+            scrollCollapse: true,
+            responsive: false,
+            autoWidth: false,
+            info: false,         // Cache "Showing 1 to X..."
+            lengthChange: false  // Cache "Show 10 entries"
+          });
+          // Style Bootstrap pour le select (même si caché, c'est la bonne pratique)
+          $(".dataTables_length select").addClass("form-select form-select-sm");
+        }, 100);
       },
       error: (err) => {
         console.error('Erreur lors du chargement des administrateurs:', err);

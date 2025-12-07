@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { Particulier } from '../Entity/Particulier.Entity';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-
 import { CrudService } from '../service/crud.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-liste-particulier',
@@ -25,6 +26,20 @@ export class ListeParticulierComponent {
     this.service.getParticulier().subscribe({
       next: (Particuliers) => {
         this.listeParticulier = Particuliers;
+        setTimeout(() => {
+          if ($.fn.DataTable.isDataTable('#datatable')) {
+            $('#datatable').DataTable().destroy();
+          }
+          $('#datatable').DataTable({
+            scrollX: true,
+            scrollCollapse: true,
+            responsive: false,
+            autoWidth: false,
+            info: false,
+            lengthChange: false
+          });
+          $(".dataTables_length select").addClass("form-select form-select-sm");
+        }, 100);
       },
       error: (err) => {
         console.error('Erreur lors du chargement des particuliers:', err);

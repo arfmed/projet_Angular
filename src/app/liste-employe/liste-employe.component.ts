@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { CrudService } from '../service/crud.service';
 
+declare var $: any;
+
 @Component({
     selector: 'app-liste-employe',
     templateUrl: './liste-employe.component.html',
@@ -24,6 +26,20 @@ export class ListeEmployeComponent implements OnInit {
         this.service.getEmploye().subscribe({
             next: (employes) => {
                 this.listeEmploye = employes;
+                setTimeout(() => {
+                    if ($.fn.DataTable.isDataTable('#datatable')) {
+                        $('#datatable').DataTable().destroy();
+                    }
+                    $('#datatable').DataTable({
+                        scrollX: true,
+                        scrollCollapse: true,
+                        responsive: false,
+                        autoWidth: false,
+                        info: false,
+                        lengthChange: false
+                    });
+                    $(".dataTables_length select").addClass("form-select form-select-sm");
+                }, 100);
             },
             error: (err) => {
                 console.error('Erreur lors du chargement des employés:', err);
