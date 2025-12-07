@@ -1,0 +1,187 @@
+/* 
+ * Guide pour ajouter des ic��nes dans les inputs
+ * Voici le code HTML à utiliser pour chaque champ avec une icône
+ */
+
+/* EXEMPLE POUR INSTAGRAM */
+/*
+<div class="mb-3">
+    <label class="form-label">Instagram</label>
+    <div class="input-group">
+        <span class="input-group-text bg-white">
+            <i class="mdi mdi-instagram" style="color: #E4405F; font-size: 18px;"></i>
+        </span>
+        <input formControlName="instagramLink" class="form-control" type="url" placeholder="https://instagram.com/...">
+    </div>
+</div>
+*/
+
+/* LISTE COMPLÈTE DES ICÔNES POUR LES RÉSEAUX SOCIAUX */
+
+/* Facebook - icône bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-facebook" style="color: #1877F2; font-size: 18px;"></i></span>
+    <input formControlName="fbLink" class="form-control" type="url">
+</div>
+*/
+
+/* Twitter/X - icône bleu clair */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-twitter" style="color: #1DA1F2; font-size: 18px;"></i></span>
+    <input formControlName="xLink" class="form-control" type="url">
+</div>
+*/
+
+/* Instagram - icône rose/rouge */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-instagram" style="color: #E4405F; font-size: 18px;"></i></span>
+    <input formControlName="instagramLink" class="form-control" type="url">
+</div>
+*/
+
+/* LinkedIn - icône bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-linkedin" style="color: #0A66C2; font-size: 18px;"></i></span>
+    <input formControlName="linkedinLink" class="form-control" type="url">
+</div>
+*/
+
+/* YouTube - icône rouge */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-youtube" style="color: #FF0000; font-size: 18px;"></i></span>
+    <input formControlName="youtubeLink" class="form-control" type="url">
+</div>
+*/
+
+/* Snapchat - icône jaune */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-snapchat" style="color: #FFFC00; font-size: 18px;"></i></span>
+    <input formControlName="snapchatLink" class="form-control" type="url">
+</div>
+*/
+
+/* TikTok - icône noire */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-music-note" style="color: #000000; font-size: 18px;"></i></span>
+    <input formControlName="tiktokLink" class="form-control" type="url">
+</div>
+*/
+
+/* Twitch - icône violette */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-twitch" style="color: #9146FF; font-size: 18px;"></i></span>
+    <input formControlName="twitchLink" class="form-control" type="url">
+</div>
+*/
+
+/* WhatsApp - icône verte */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-whatsapp" style="color: #25D366; font-size: 18px;"></i></span>
+    <input formControlName="whatsappLink" class="form-control" type="text">
+</div>
+*/
+
+/* Discord - icône bleue/violette */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-discord" style="color: #5865F2; font-size: 18px;"></i></span>
+    <input formControlName="discordLink" class="form-control" type="url">
+</div>
+*/
+
+/* Telegram - icône bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-telegram" style="color: #0088CC; font-size: 18px;"></i></span>
+    <input formControlName="telegramLink" class="form-control" type="url">
+</div>
+*/
+
+/* GitHub - icône noire */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-github" style="color: #181717; font-size: 18px;"></i></span>
+    <input formControlName="githubLink" class="form-control" type="url">
+</div>
+*/
+
+/* GitLab - icône orange */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-gitlab" style="color: #FC6D26; font-size: 18px;"></i></span>
+    <input formControlName="gitlabLink" class="form-control" type="url">
+</div>
+*/
+
+/* Skype - icône bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-skype" style="color: #00AFF0; font-size: 18px;"></i></span>
+    <input formControlName="skypeLink" class="form-control" type="text">
+</div>
+*/
+
+/* Email - icône grise/bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-email" style="color: #0072C6; font-size: 18px;"></i></span>
+    <input formControlName="email" class="form-control" type="email">
+</div>
+*/
+
+/* Téléphone - icône verte */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-phone" style="color: #4CAF50; font-size: 18px;"></i></span>
+    <input formControlName="numTelephone" class="form-control" type="tel">
+</div>
+*/
+
+/* Adresse/Localisation - icône rouge */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-map-marker" style="color: #EA4335; font-size: 18px;"></i></span>
+    <input formControlName="adresse" class="form-control" type="text">
+</div>
+*/
+
+/* Lien/URL - icône bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-link-variant" style="color: #4285F4; font-size: 18px;"></i></span>
+    <input formControlName="urlEntreprise" class="form-control" type="url">
+</div>
+*/
+
+/* Entreprise/Building - icône grise */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-office-building" style="color: #5F6368; font-size: 18px;"></i></span>
+    <input formControlName="nomEntreprise" class="form-control" type="text">
+</div>
+*/
+
+/* Photo/Image - icône bleue */
+/*
+<div class="input-group">
+    <span class="input-group-text bg-white"><i class="mdi mdi-image" style="color: #4285F4; font-size: 18px;"></i></span>
+    <input formControlName="photoDeProfil" class="form-control" type="text">
+</div>
+*/
+
+/* INSTRUCTIONS D'UTILISATION:
+ * 1. Copiez le code HTML d'exemple ci-dessus
+ * 2. Remplacez votre <input> simple par la structure <div class="input-group">
+ * 3. L'icône apparaîtra à gauche du champ de saisie avec la couleur officielle du réseau social
+ * 4. Le bg-white garde le fond blanc pour l'icône
+ * 5. Ajustez font-size si nécessaire (18px est une bonne taille)
+ */

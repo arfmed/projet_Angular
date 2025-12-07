@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from themesbrand.com/skote/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:05 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Modifier Particulier | Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <app-header></app-header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <app-menu></app-menu>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18 text-capitalize">Modifier Particulier</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <form (ngSubmit)="updateParticulier()" [formGroup]="particulierForm">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h4 class="card-title mb-4">Informations personnelles</h4>
+
+                                        <div class="mb-3 row">
+                                            <label for="nom-input" class="col-md-2 col-form-label">Nom*</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-account"
+                                                            style="color: #556EE6; font-size: 18px;"></i></span>
+                                                    <input formControlName="nom" class="form-control" type="text"
+                                                        placeholder="Nom" id="nom-input">
+                                                </div>
+                                                <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">Le nom est
+                                                    obligatoire (minimum 3 caractères)</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="email-input" class="col-md-2 col-form-label">Email*</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-email"
+                                                            style="color: #0072C6; font-size: 18px;"></i></span>
+                                                    <input formControlName="email" class="form-control" type="email"
+                                                        placeholder="email@example.com" id="email-input">
+                                                </div>
+                                                <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email
+                                                    valide est obligatoire</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="mdp-input" class="col-md-2 col-form-label">Mot de passe*</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-lock"
+                                                            style="color: #F46A6A; font-size: 18px;"></i></span>
+                                                    <input formControlName="mdp" class="form-control" type="password"
+                                                        placeholder="Mot de passe" id="mdp-input">
+                                                </div>
+                                                <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de
+                                                    passe obligatoire (minimum 3 caractères)</div>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="card-title mb-4 mt-5">Images & Médias</h4>
+
+                                        <div class="mb-3 row">
+                                            <label for="photoProfil-input" class="col-md-2 col-form-label">Photo de
+                                                Profil</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-account-circle"
+                                                            style="color: #556EE6; font-size: 18px;"></i></span>
+                                                    <input formControlName="photoDeProfil" class="form-control"
+                                                        type="text" placeholder="URL de la photo de profil"
+                                                        id="photoProfil-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="logoEntreprise-input" class="col-md-2 col-form-label">Logo
+                                                Entreprise</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-image-filter-hdr"
+                                                            style="color: #F46A6A; font-size: 18px;"></i></span>
+                                                    <input formControlName="logoEntreprise" class="form-control"
+                                                        type="text" placeholder="URL du logo entreprise"
+                                                        id="logoEntreprise-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="photoCouverture-input" class="col-md-2 col-form-label">Photo de
+                                                Couverture</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-image-area"
+                                                            style="color: #34C38F; font-size: 18px;"></i></span>
+                                                    <input formControlName="photoCouverture" class="form-control"
+                                                        type="text" placeholder="URL de la photo de couverture"
+                                                        id="photoCouverture-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="card-title mb-4 mt-5">Informations Professionnelles</h4>
+
+                                        <div class="mb-3 row">
+                                            <label for="titreEmploi-input" class="col-md-2 col-form-label">Titre
+                                                d'Emploi</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-briefcase"
+                                                            style="color: #34C38F; font-size: 18px;"></i></span>
+                                                    <input formControlName="titreEmploi" class="form-control"
+                                                        type="text" placeholder="Ex: Développeur Web"
+                                                        id="titreEmploi-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="departement-input"
+                                                class="col-md-2 col-form-label">Département</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-domain"
+                                                            style="color: #50A5F1; font-size: 18px;"></i></span>
+                                                    <input formControlName="departement" class="form-control"
+                                                        type="text" placeholder="Département" id="departement-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="nomEntreprise-input" class="col-md-2 col-form-label">Nom
+                                                Entreprise</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-office-building"
+                                                            style="color: #5F6368; font-size: 18px;"></i></span>
+                                                    <input formControlName="nomEntreprise" class="form-control"
+                                                        type="text" placeholder="Nom de l'entreprise"
+                                                        id="nomEntreprise-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="urlEntreprise-input" class="col-md-2 col-form-label">URL
+                                                Entreprise</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-link-variant"
+                                                            style="color: #4285F4; font-size: 18px;"></i></span>
+                                                    <input formControlName="urlEntreprise" class="form-control"
+                                                        type="url" placeholder="https://www.exemple.com"
+                                                        id="urlEntreprise-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="card-title mb-4 mt-5">Contact</h4>
+
+                                        <div class="mb-3 row">
+                                            <label for="numTelephone-input" class="col-md-2 col-form-label">Numéro de
+                                                Téléphone</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-phone"
+                                                            style="color: #4CAF50; font-size: 18px;"></i></span>
+                                                    <input formControlName="numTelephone" class="form-control"
+                                                        type="tel" placeholder="+33 6 12 34 56 78"
+                                                        id="numTelephone-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="adresse-input" class="col-md-2 col-form-label">Adresse</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-map-marker"
+                                                            style="color: #EA4335; font-size: 18px;"></i></span>
+                                                    <input formControlName="adresse" class="form-control" type="text"
+                                                        placeholder="Adresse complète" id="adresse-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="card-title mb-4 mt-5">Personnalisation</h4>
+
+                                        <div class="mb-3 row">
+                                            <label for="couleur-input" class="col-md-2 col-form-label">Couleur</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-palette"
+                                                            style="color: #F46A6A; font-size: 18px;"></i></span>
+                                                    <input formControlName="couleur" class="form-control" type="color"
+                                                        id="couleur-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="police-input" class="col-md-2 col-form-label">Police</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-format-font"
+                                                            style="color: #556EE6; font-size: 18px;"></i></span>
+                                                    <input formControlName="police" class="form-control" type="text"
+                                                        placeholder="Ex: Arial, Roboto, etc." id="police-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="card-title mb-4 mt-5">Réseaux Sociaux</h4>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Facebook</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-facebook"
+                                                                style="color: #1877F2; font-size: 18px;"></i></span>
+                                                        <input formControlName="fbLink" class="form-control" type="url"
+                                                            placeholder="https://facebook.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">X (Twitter)</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-twitter"
+                                                                style="color: #1DA1F2; font-size: 18px;"></i></span>
+                                                        <input formControlName="xLink" class="form-control" type="url"
+                                                            placeholder="https://x.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Instagram</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-instagram"
+                                                                style="color: #E4405F; font-size: 18px;"></i></span>
+                                                        <input formControlName="instagramLink" class="form-control"
+                                                            type="url" placeholder="https://instagram.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">LinkedIn</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-linkedin"
+                                                                style="color: #0A66C2; font-size: 18px;"></i></span>
+                                                        <input formControlName="linkedinLink" class="form-control"
+                                                            type="url" placeholder="https://linkedin.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">YouTube</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-youtube"
+                                                                style="color: #FF0000; font-size: 18px;"></i></span>
+                                                        <input formControlName="youtubeLink" class="form-control"
+                                                            type="url" placeholder="https://youtube.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Snapchat</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-snapchat"
+                                                                style="color: #FFFC00; font-size: 18px;"></i></span>
+                                                        <input formControlName="snapchatLink" class="form-control"
+                                                            type="url" placeholder="https://snapchat.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">TikTok</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-music-note"
+                                                                style="color: #000000; font-size: 18px;"></i></span>
+                                                        <input formControlName="tiktokLink" class="form-control"
+                                                            type="url" placeholder="https://tiktok.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Twitch</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-twitch"
+                                                                style="color: #9146FF; font-size: 18px;"></i></span>
+                                                        <input formControlName="twitchLink" class="form-control"
+                                                            type="url" placeholder="https://twitch.tv/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Yelp</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i class="mdi mdi-star"
+                                                                style="color: #D32323; font-size: 18px;"></i></span>
+                                                        <input formControlName="yelpLink" class="form-control"
+                                                            type="url" placeholder="https://yelp.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">WhatsApp</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-whatsapp"
+                                                                style="color: #25D366; font-size: 18px;"></i></span>
+                                                        <input formControlName="whatsappLink" class="form-control"
+                                                            type="text" placeholder="Lien WhatsApp">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Signal</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-message-text"
+                                                                style="color: #3A76F0; font-size: 18px;"></i></span>
+                                                        <input formControlName="signalLink" class="form-control"
+                                                            type="text" placeholder="Lien Signal">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Discord</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-discord"
+                                                                style="color: #5865F2; font-size: 18px;"></i></span>
+                                                        <input formControlName="discordLink" class="form-control"
+                                                            type="url" placeholder="https://discord.gg/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Skype</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i class="mdi mdi-skype"
+                                                                style="color: #00AFF0; font-size: 18px;"></i></span>
+                                                        <input formControlName="skypeLink" class="form-control"
+                                                            type="text" placeholder="Skype ID">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Telegram</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-telegram"
+                                                                style="color: #0088CC; font-size: 18px;"></i></span>
+                                                        <input formControlName="telegramLink" class="form-control"
+                                                            type="url" placeholder="https://t.me/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">GitHub</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-github"
+                                                                style="color: #181717; font-size: 18px;"></i></span>
+                                                        <input formControlName="githubLink" class="form-control"
+                                                            type="url" placeholder="https://github.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">GitLab</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-white"><i
+                                                                class="mdi mdi-gitlab"
+                                                                style="color: #FC6D26; font-size: 18px;"></i></span>
+                                                        <input formControlName="gitlabLink" class="form-control"
+                                                            type="url" placeholder="https://gitlab.com/...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <button type="submit" class="btn btn-primary w-md">Modifier</button>
+                                            <a href="/listeParticulier" class="btn btn-secondary w-md ms-2">Annuler</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </form>
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <app-footer></app-footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+                <h5 class="m-0 me-2">Settings</h5>
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0" />
+            <h6 class="text-center mb-0">Choose Layouts</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch">
+                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="assets/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-5">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">
+                    <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                </div>
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+
+</body>
+
+<!-- Mirrored from themesbrand.com/skote/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:06 GMT -->
+
+</html>

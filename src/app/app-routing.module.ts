@@ -10,24 +10,28 @@ import { AjouterEmployeComponent } from './ajouter-employe/ajouter-employe.compo
 import { AjouterParticulierComponent } from './ajouter-particulier/ajouter-particulier.component';
 import { ModifierAdminComponent } from './modifier-admin/modifier-admin.component';
 import { ListeParticulierComponent } from './liste-particulier/liste-particulier.component';
+import { ModifierParticulierComponent } from './modifier-particulier/modifier-particulier.component';
+import { ModifierEntrepriseComponent } from './modifier-entreprise/modifier-entreprise.component';
 
 
 const routes: Routes = [
-  {path:'add',component:AjouterAdminComponent},
-  {path:'listeAdmin',component:ListeAdminComponent},
-  {path:'login',component:LoginComponent},
-  {path:'',component:LoginComponent},
-  {path:'listeEntreprise',component:ListeEntrepriseComponent},
-  {path:'addEntreprise',component:AjouterEntrepriseComponent},
-  {path:'addEmploye',component:AjouterEmployeComponent},
-  {path:'listeEmlpoye',component:ListeEmployeComponent},
-  {path: 'addParticulier',component:AjouterParticulierComponent},
-  {path: 'modifierAdmin/:id',component:ModifierAdminComponent},
-  {path:'listeParticulier',component:ListeParticulierComponent},
-  
-  
-  
-  
+  { path: 'add', component: AjouterAdminComponent },
+  { path: 'listeAdmin', component: ListeAdminComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
+  { path: 'listeEntreprise', component: ListeEntrepriseComponent },
+  { path: 'addEntreprise', component: AjouterEntrepriseComponent },
+  { path: 'addEmploye', component: AjouterEmployeComponent },
+  { path: 'listeEmlpoye', component: ListeEmployeComponent },
+  { path: 'addParticulier', component: AjouterParticulierComponent },
+  { path: 'modifierAdmin/:id', component: ModifierAdminComponent },
+  { path: 'listeParticulier', component: ListeParticulierComponent },
+  { path: 'modifierParticulier/:id', component: ModifierParticulierComponent },
+  { path: 'modifierEntreprise/:id', component: ModifierEntrepriseComponent },
+
+
+
+
 ];
 
 @NgModule({

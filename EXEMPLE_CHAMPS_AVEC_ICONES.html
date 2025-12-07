@@ -1,0 +1,197 @@
+<!-- 
+EXEMPLE POUR LES CHAMPS INFORMATIONNELS AVEC ICÔNES
+À utiliser dans les différents formulaires de modification
+-->
+
+<!-- SECTION INFORMATIONS PERSONNELLES -->
+<h4 class="card-title mb-4">Informations personnelles</h4>
+
+<div class="mb-3 row">
+    <label for="nom-input" class="col-md-2 col-form-label">Nom*</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-account"
+                    style="color: #556EE6; font-size: 18px;"></i></span>
+            <input formControlName="nom" class="form-control" type="text" placeholder="Nom" id="nom-input">
+        </div>
+        <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">Le nom est obligatoire (minimum 3 caractères)
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="email-input" class="col-md-2 col-form-label">Email*</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-email"
+                    style="color: #0072C6; font-size: 18px;"></i></span>
+            <input formControlName="email" class="form-control" type="email" placeholder="email@example.com"
+                id="email-input">
+        </div>
+        <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email valide est obligatoire</div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="mdp-input" class="col-md-2 col-form-label">Mot de passe*</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-lock"
+                    style="color: #F46A6A; font-size: 18px;"></i></span>
+            <input formControlName="mdp" class="form-control" type="password" placeholder="Mot de passe" id="mdp-input">
+        </div>
+        <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de passe obligatoire (minimum 3 caractères)
+        </div>
+    </div>
+</div>
+
+<!-- SECTION CONTACT -->
+<h4 class="card-title mb-4 mt-5">Contact</h4>
+
+<div class="mb-3 row">
+    <label for="numTelephone-input" class="col-md-2 col-form-label">Numéro de Téléphone</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-phone"
+                    style="color: #4CAF50; font-size: 18px;"></i></span>
+            <input formControlName="numTelephone" class="form-control" type="tel" placeholder="+33 6 12 34 56 78"
+                id="numTelephone-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="adresse-input" class="col-md-2 col-form-label">Adresse</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-map-marker"
+                    style="color: #EA4335; font-size: 18px;"></i></span>
+            <input formControlName="adresse" class="form-control" type="text" placeholder="Adresse complète"
+                id="adresse-input">
+        </div>
+    </div>
+</div>
+
+<!-- SECTION PROFESSIONNELLE -->
+<h4 class="card-title mb-4 mt-5">Informations Professionnelles</h4>
+
+<div class="mb-3 row">
+    <label for="titreEmploi-input" class="col-md-2 col-form-label">Titre d'Emploi</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-briefcase"
+                    style="color: #34C38F; font-size: 18px;"></i></span>
+            <input formControlName="titreEmploi" class="form-control" type="text" placeholder="Ex: Développeur Web"
+                id="titreEmploi-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="nomEntreprise-input" class="col-md-2 col-form-label">Nom Entreprise</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-office-building"
+                    style="color: #5F6368; font-size: 18px;"></i></span>
+            <input formControlName="nomEntreprise" class="form-control" type="text" placeholder="Nom de l'entreprise"
+                id="nomEntreprise-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="urlEntreprise-input" class="col-md-2 col-form-label">URL Entreprise</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-link-variant"
+                    style="color: #4285F4; font-size: 18px;"></i></span>
+            <input formControlName="urlEntreprise" class="form-control" type="url" placeholder="https://www.exemple.com"
+                id="urlEntreprise-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="departement-input" class="col-md-2 col-form-label">Département</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-domain"
+                    style="color: #50A5F1; font-size: 18px;"></i></span>
+            <input formControlName="departement" class="form-control" type="text" placeholder="Département"
+                id="departement-input">
+        </div>
+    </div>
+</div>
+
+<!-- SECTION IMAGES & MÉDIAS -->
+<h4 class="card-title mb-4 mt-5">Images & Médias</h4>
+
+<div class="mb-3 row">
+    <label for="photoProfil-input" class="col-md-2 col-form-label">Photo de Profil</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-account-circle"
+                    style="color: #556EE6; font-size: 18px;"></i></span>
+            <input formControlName="photoDeProfil" class="form-control" type="text"
+                placeholder="URL de la photo de profil" id="photoProfil-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="logoEntreprise-input" class="col-md-2 col-form-label">Logo Entreprise</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-image-filter-hdr"
+                    style="color: #F46A6A; font-size: 18px;"></i></span>
+            <input formControlName="logoEntreprise" class="form-control" type="text"
+                placeholder="URL du logo entreprise" id="logoEntreprise-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="photoCouverture-input" class="col-md-2 col-form-label">Photo de Couverture</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-image-area"
+                    style="color: #34C38F; font-size: 18px;"></i></span>
+            <input formControlName="photoCouverture" class="form-control" type="text"
+                placeholder="URL de la photo de couverture" id="photoCouverture-input">
+        </div>
+    </div>
+</div>
+
+<!-- SECTION PERSONNALISATION -->
+<h4 class="card-title mb-4 mt-5">Personnalisation</h4>
+
+<div class="mb-3 row">
+    <label for="couleur-input" class="col-md-2 col-form-label">Couleur</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-palette"
+                    style="color: #F46A6A; font-size: 18px;"></i></span>
+            <input formControlName="couleur" class="form-control" type="color" id="couleur-input">
+        </div>
+    </div>
+</div>
+
+<div class="mb-3 row">
+    <label for="police-input" class="col-md-2 col-form-label">Police</label>
+    <div class="col-md-10">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="mdi mdi-format-font"
+                    style="color: #556EE6; font-size: 18px;"></i></span>
+            <input formControlName="police" class="form-control" type="text" placeholder="Ex: Arial, Roboto, etc."
+                id="police-input">
+        </div>
+    </div>
+</div>
+
+<!-- 
+INSTRUCTIONS:
+1. Copiez les sections dont vous avez besoin
+2. Remplacez simplement vos inputs actuels par ces versions avec icônes
+3. Les couleurs sont choisies pour être cohérentes et professionnelles
+4. Toutes les icônes sont dans Material Design Icons (mdi) déjà inclus dans Skote
+-->

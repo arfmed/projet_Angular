@@ -13,9 +13,9 @@ import { CrudService } from '../service/crud.service';
 export class ModifierAdminComponent {
 
   id: number;
-  
+
   adminForm: FormGroup;
-  
+
 
   constructor(
     private services: CrudService,
@@ -64,9 +64,9 @@ export class ModifierAdminComponent {
     }
     if (control.hasError('minlength')) {
       return `Le champ ${fieldName} doit contenir au moins ${control.errors.minlength.requiredLength} caractères`;
-      }
+    }
     if (control.hasError('pattern')) {
-      switch(fieldName) {
+      switch (fieldName) {
         case 'nom':
         case 'prenom':
           return 'Seuls les caractères alphabétiques sont autorisés';
@@ -146,7 +146,7 @@ export class ModifierAdminComponent {
           timer: 2000,
           showConfirmButton: false
         }).then(() => {
-          this.router.navigate(['/listadmin']).then(() => {
+          this.router.navigate(['/listeAdmin']).then(() => {
             window.location.reload();
           });
         });

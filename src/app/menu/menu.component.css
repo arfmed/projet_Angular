@@ -1,0 +1,99 @@
+/* --- Menu "Compact Blue Dynamic" --- */
+
+#sidebar-menu {
+    padding: 15px 10px;
+    /* Moins de padding global */
+    font-family: 'Rubik', sans-serif;
+}
+
+.menu-title {
+    padding: 0 12px 10px 12px !important;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+}
+
+#sidebar-menu ul li {
+    margin-bottom: 6px;
+    /* Items plus rapprochés */
+}
+
+/* --- Le Lien Compact --- */
+.menu-link-neo {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    /* Plus petit */
+    color: #64748b;
+    font-size: 0.85rem;
+    /* Texte plus discret */
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    background: transparent;
+    text-decoration: none;
+}
+
+/* --- L'Icône Compacte --- */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    /* Icône plus petite */
+    height: 26px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    /* Fond gris clair par défaut */
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-right: 12px;
+    transition: all 0.25s ease;
+}
+
+/* --- Interaction "Blue Splash" --- */
+.menu-link-neo:hover {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    /* Le Bleu demandé ! */
+    color: #ffffff;
+    transform: translateX(3px);
+    /* Petit mouvement */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    /* Ombre bleue */
+}
+
+/* Interaction Icone */
+.menu-link-neo:hover .icon-box {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transform: scale(1.05);
+    /* Petit zoom dynamique */
+}
+
+/* --- Indicateur Latéral (Optionnel mais chic) --- */
+.menu-link-neo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleY(0);
+    height: 14px;
+    width: 3px;
+    background: #ffffff;
+    border-radius: 0 2px 2px 0;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.menu-link-neo:hover::before {
+    transform: translateY(-50%) scaleY(1);
+    opacity: 1;
+}
+
+/* Texte un peu plus gras au survol pour la lisibilité */
+.menu-link-neo:hover span {
+    font-weight: 600;
+}

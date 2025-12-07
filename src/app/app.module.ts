@@ -18,6 +18,8 @@ import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 import { AjouterParticulierComponent } from './ajouter-particulier/ajouter-particulier.component';
 import { ListeParticulierComponent } from './liste-particulier/liste-particulier.component';
 import { ModifierAdminComponent } from './modifier-admin/modifier-admin.component';
+import { ModifierParticulierComponent } from './modifier-particulier/modifier-particulier.component';
+import { ModifierEntrepriseComponent } from './modifier-entreprise/modifier-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ModifierAdminComponent } from './modifier-admin/modifier-admin.componen
     AjouterParticulierComponent,
     ListeParticulierComponent,
     ModifierAdminComponent,
+    ModifierParticulierComponent,
+    ModifierEntrepriseComponent,
   ],
   imports: [
     BrowserModule,

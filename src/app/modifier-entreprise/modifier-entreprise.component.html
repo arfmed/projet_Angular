@@ -1,35 +1,24 @@
 <!doctype html>
 <html lang="en">
 
-
-<!-- Mirrored from themesbrand.com/skote/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:05 GMT -->
-
 <head>
-
     <meta charset="utf-8" />
-    <title>Form Elements | Skote - Entreprise & Dashboard Template</title>
+    <title>Modifier Entreprise | Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Entreprise & Dashboard Template" name="description" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
-
-
 </head>
 
 <body data-sidebar="dark">
 
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-
     <!-- Begin page -->
     <div id="layout-wrapper">
-
 
         <app-header></app-header>
 
         <!-- ========== Left Sidebar Start ========== -->
         <app-menu></app-menu>
         <!-- Left Sidebar End -->
-
-
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
@@ -43,15 +32,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18 text-capitalize">Ajouter Entreprise</h4>
-
-                                <!--<div class="page-title-right">
-                <ol class="breadcrumb m-0 text-capitalize">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                    <li class="breadcrumb-item active">Form Elements</li>
-                </ol>
-            </div> -->
-
+                                <h4 class="mb-sm-0 font-size-18 text-capitalize">Modifier Entreprise</h4>
                             </div>
                         </div>
                     </div>
@@ -59,141 +40,119 @@
                     <!-- end page title -->
 
                     <div class="row">
-                        <form (ngSubmit)="addNewEntreprise()" [formGroup]="entrepriseForm">
+                        <form (ngSubmit)="updateEntreprise()" [formGroup]="entrepriseForm">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <!--<h4 class="card-title">Textual inputs</h4>
-                                        <p class="card-title-desc">Here are examples of <code>.form-control</code> applied to
-                                            each
-                                            textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p> -->
+                                        <h4 class="card-title mb-4">Informations de l'entreprise</h4>
 
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-md-2 col-form-label">Nom</label>
+                                            <label for="nom-input" class="col-md-2 col-form-label">Nom*</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i
                                                             class="mdi mdi-office-building"
                                                             style="color: #556EE6; font-size: 18px;"></i></span>
                                                     <input formControlName="nom" class="form-control" type="text"
-                                                        placeholder="Nom" id="example-text-input">
+                                                        placeholder="Nom de l'entreprise" id="nom-input">
                                                 </div>
-                                                <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">non valide
-                                                    (3 lettres minimum, lettres uniquement)
+                                                <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">
+                                                    Le nom est obligatoire (minimum 3 caractères)
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="example-email-input"
-                                                class="col-md-2 col-form-label">Email</label>
+                                            <label for="email-input" class="col-md-2 col-form-label">Email*</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i class="mdi mdi-email"
                                                             style="color: #0072C6; font-size: 18px;"></i></span>
                                                     <input formControlName="email" class="form-control" type="email"
-                                                        placeholder="Enter_Email@gmail.com" id="example-email-input">
+                                                        placeholder="email@example.com" id="email-input">
                                                 </div>
-                                                <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email
-                                                    non valide (utilisez le format : exemple@gmail.com)
+                                                <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                                                    Email valide est obligatoire
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="example-password-input"
-                                                class="col-md-2 col-form-label">Password</label>
+                                            <label for="mdp-input" class="col-md-2 col-form-label">Mot de passe*</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i class="mdi mdi-lock"
                                                             style="color: #F46A6A; font-size: 18px;"></i></span>
                                                     <input formControlName="mdp" class="form-control" type="password"
-                                                        placeholder="Tapez le mot de passe" id="example-password-input">
+                                                        placeholder="Mot de passe" id="mdp-input">
                                                 </div>
-                                                <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de
-                                                    passe non valide (minimum 3 chiffres)
+                                                <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">
+                                                    Mot de passe obligatoire (minimum 3 caractères)
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
-                                            <label for="example-text-input"
-                                                class="col-md-2 col-form-label">logoEntreprise</label>
+                                            <label for="logoEntreprise-input" class="col-md-2 col-form-label">Logo
+                                                Entreprise</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i
                                                             class="mdi mdi-image-filter-hdr"
                                                             style="color: #F46A6A; font-size: 18px;"></i></span>
                                                     <input formControlName="logoEntreprise" class="form-control"
-                                                        type="text" placeholder="logoEntreprise"
-                                                        id="example-logoEntreprise-input">
-                                                </div>
-                                                <div *ngIf="logoEntreprise?.invalid && logoEntreprise?.touched"
-                                                    class="text-danger">non valide (3 lettres minimum, lettres
-                                                    uniquement)
+                                                        type="text" placeholder="URL du logo" id="logoEntreprise-input">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="example-text-input"
-                                                class="col-md-2 col-form-label">photoCouverture</label>
+                                            <label for="photoCouverture-input" class="col-md-2 col-form-label">Photo de
+                                                Couverture</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i
                                                             class="mdi mdi-image-area"
                                                             style="color: #34C38F; font-size: 18px;"></i></span>
                                                     <input formControlName="photoCouverture" class="form-control"
-                                                        type="text" placeholder="photoCouverture"
-                                                        id="example-photoCouverture-input">
-                                                </div>
-                                                <div *ngIf="photoCouverture?.invalid && photoCouverture?.touched"
-                                                    class="text-danger">non valide (3 lettres minimum, lettres
-                                                    uniquement)
+                                                        type="text" placeholder="URL de la photo de couverture"
+                                                        id="photoCouverture-input">
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
-                                            <label for="example-text-input"
-                                                class="col-md-2 col-form-label">urlEntreprise</label>
+                                            <label for="urlEntreprise-input" class="col-md-2 col-form-label">URL
+                                                Entreprise</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i
                                                             class="mdi mdi-link-variant"
                                                             style="color: #4285F4; font-size: 18px;"></i></span>
                                                     <input formControlName="urlEntreprise" class="form-control"
-                                                        type="text" placeholder="urlEntreprise"
-                                                        id="example-urlEntreprise-input">
-                                                </div>
-                                                <div *ngIf="urlEntreprise?.invalid && urlEntreprise?.touched"
-                                                    class="text-danger">non valide (3 lettres minimum, lettres
-                                                    uniquement)
+                                                        type="url" placeholder="https://www.exemple.com"
+                                                        id="urlEntreprise-input">
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="mb-3 row">
-                                            <label for="example-text-input"
-                                                class="col-md-2 col-form-label">adresse</label>
+                                            <label for="adresse-input" class="col-md-2 col-form-label">Adresse</label>
                                             <div class="col-md-10">
                                                 <div class="input-group">
                                                     <span class="input-group-text bg-white"><i
                                                             class="mdi mdi-map-marker"
                                                             style="color: #EA4335; font-size: 18px;"></i></span>
                                                     <input formControlName="adresse" class="form-control" type="text"
-                                                        placeholder="adresse" id="example-urlEntreprise-input">
-                                                </div>
-                                                <div *ngIf="adresse?.invalid && adresse?.touched" class="text-danger">
-                                                    non valide (3 lettres minimum, lettres uniquement)
+                                                        placeholder="Adresse complète" id="adresse-input">
                                                 </div>
                                             </div>
                                         </div>
 
-
-
-
-
-                                        <div>
-                                            <button type="submit" class="btn btn-primary w-md">Ajouter</button>
+                                        <div class="mt-4">
+                                            <button type="submit" class="btn btn-primary w-md">Modifier</button>
+                                            <a href="/listeEntreprise" class="btn btn-secondary w-md ms-2">Annuler</a>
                                         </div>
 
                                     </div>
@@ -203,12 +162,9 @@
                     </div>
                     <!-- end row -->
 
-
-
                 </div> <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
 
             <app-footer></app-footer>
         </div>
@@ -221,9 +177,7 @@
     <div class="right-bar">
         <div data-simplebar class="h-100">
             <div class="rightbar-title d-flex align-items-center px-3 py-4">
-
                 <h5 class="m-0 me-2">Settings</h5>
-
                 <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
                     <i class="mdi mdi-close noti-icon"></i>
                 </a>
@@ -267,7 +221,6 @@
                     <label class="form-check-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
                 </div>
 
-
             </div>
 
         </div> <!-- end slimscroll-menu-->
@@ -277,12 +230,6 @@
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
-    <!-- JAVASCRIPT -->
-
-
 </body>
-
-
-<!-- Mirrored from themesbrand.com/skote/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Mar 2025 23:05:06 GMT -->
 
 </html>

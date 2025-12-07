@@ -72,30 +72,46 @@
                                         <div class="mb-3 row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Nom</label>
                                             <div class="col-md-10">
-                                                <input formControlName="nom" class="form-control" type="text"
-                                                    placeholder="Nom" id="example-text-input">
-                                                    <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">non valide (3 lettres minimum, lettres uniquement)
-                                                    </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-account"
+                                                            style="color: #556EE6; font-size: 18px;"></i></span>
+                                                    <input formControlName="nom" class="form-control" type="text"
+                                                        placeholder="Nom" id="example-text-input">
+                                                </div>
+                                                <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">non valide
+                                                    (3 lettres minimum, lettres uniquement)
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="example-search-input"
                                                 class="col-md-2 col-form-label">Prénom</label>
                                             <div class="col-md-10">
-                                                <input formControlName="prenom" class="form-control" type="text"
-                                                    placeholder="Prénom" id="example-search-input">
-                                                     <div *ngIf="prenom?.invalid && prenom?.touched" class="text-danger">non valide (3 lettres minimum, lettres uniquement)
-                                                    </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-account-outline"
+                                                            style="color: #34C38F; font-size: 18px;"></i></span>
+                                                    <input formControlName="prenom" class="form-control" type="text"
+                                                        placeholder="Prénom" id="example-search-input">
+                                                </div>
+                                                <div *ngIf="prenom?.invalid && prenom?.touched" class="text-danger">non
+                                                    valide (3 lettres minimum, lettres uniquement)
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="example-email-input"
                                                 class="col-md-2 col-form-label">Email</label>
                                             <div class="col-md-10">
-                                                <input formControlName="email" class="form-control" type="email"
-                                                    placeholder="Enter_Email@gmail.com" id="example-email-input">  
-                                                    <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email non valide (utilisez le format : exemple@gmail.com)
-                                                    </div>     
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-email"
+                                                            style="color: #0072C6; font-size: 18px;"></i></span>
+                                                    <input formControlName="email" class="form-control" type="email"
+                                                        placeholder="Enter_Email@gmail.com" id="example-email-input">
+                                                </div>
+                                                <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email
+                                                    non valide (utilisez le format : exemple@gmail.com)
+                                                </div>
                                             </div>
                                         </div>
 
@@ -103,21 +119,30 @@
                                             <label for="example-password-input"
                                                 class="col-md-2 col-form-label">Password</label>
                                             <div class="col-md-10">
-                                                <input formControlName="mdp" class="form-control" type="password"
-                                                    placeholder="Tapez le mot de passe" id="example-password-input">
-                                                    <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de passe non valide (minimum 3 chiffres)
-                                                    </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i class="mdi mdi-lock"
+                                                            style="color: #F46A6A; font-size: 18px;"></i></span>
+                                                    <input formControlName="mdp" class="form-control" type="password"
+                                                        placeholder="Tapez le mot de passe" id="example-password-input">
+                                                </div>
+                                                <div *ngIf="mdp?.invalid && mdp?.touched" class="text-danger">Mot de
+                                                    passe non valide (minimum 3 chiffres)
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
                                             <label class="col-md-2 col-form-label">Role</label>
                                             <div class="col-md-10">
-                                                <select formControlName="role" class="form-select">
-
-                                                    <option value="admin">Admin</option>
-                                                    <option value="super-admin">superAdmin</option>
-                                                </select>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-white"><i
+                                                            class="mdi mdi-shield-account"
+                                                            style="color: #F1B44C; font-size: 18px;"></i></span>
+                                                    <select formControlName="role" class="form-select">
+                                                        <option value="admin">Admin</option>
+                                                        <option value="super-admin">superAdmin</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
 

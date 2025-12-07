@@ -108,7 +108,7 @@
                                                 <th>telegramLink</th>
                                                 <th>githubLink</th>
                                                 <th>gitlabLink</th>
-                                                
+
                                                 <th>email</th>
                                                 <th> mdp</th>
 
@@ -150,12 +150,15 @@
 
                                                 <td>{{particulier.email}}</td>
                                                 <td>{{ particulier.mdp }}</td>
-                                                 <td><button type="submit" class="btn btn-success">modifier</button>
-                                                    <button type="submit" class="btn btn-danger"(click)="DeletePariculier(particulier)">supprimer</button>
+                                                <td><a href="/modifierParticulier/{{particulier.id}}" type="submit"
+                                                        class="btn btn-success">modifier</a>
+                                                    <button type="submit" class="btn btn-danger"
+                                                        (click)="DeletePariculier(particulier)">supprimer</button>
                                                 </td>
 
-                                               
+
                                             </tr>
+
 
                                         </tbody>
                                     </table>
